@@ -242,10 +242,15 @@ luces(alfa, beta);
 draw_axis();
 draw_objects();
 if(t_objeto==ARTICULADO){
-	//glDrawBuffer();
+	//glDrawBuffer(GL_BACK); Se vería gris la parte de fuera
+	/* glDrawBuffer(GL_FRONT);
+	clean_window();
+	change_observer();
+	homerBot.seleccion(); */
 }
-glutSwapBuffers();
 
+//glFlush();
+glutSwapBuffers(); //NO se puede utilizar para la seleccion de color
 
 }
 

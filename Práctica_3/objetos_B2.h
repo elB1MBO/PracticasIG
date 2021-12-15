@@ -10,7 +10,7 @@
 
 const float AXIS_SIZE=5000;
 typedef enum{POINTS,EDGES,SOLID_CHESS,SOLID, SOLID_ILLUMINATED_FLAT,
-             SOLID_ILLUMINATED_GOURAUD} _modo;
+             SOLID_ILLUMINATED_GOURAUD,SELECT} _modo;
 
 //*************************************************************************
 // clase punto
@@ -40,6 +40,8 @@ void 	draw_aristas(float r, float g, float b, int grosor);
 void    draw_solido(float r, float g, float b);
 void 	draw_solido_ajedrez(float r1, float g1, float b1, float r2, float g2, float b2);
 void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
+
+void 	draw_seleccion(int r, int g, int b);
 
 void  	draw_iluminacion_plana( );
 void 	draw_iluminacion_suave( );
@@ -147,6 +149,7 @@ class _chasis: public _triangulos3D{
 	public:
 		_chasis();
 	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
+	
 
 protected:
 	_rotacion cilindro;
@@ -195,6 +198,8 @@ class _robotHomer: public _triangulos3D{
 	public:
 		_robotHomer();
 	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
+	void 	seleccion();
+
 
 //Respecto eje X
 float giroHombroM, giroHombroV;

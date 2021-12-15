@@ -148,6 +148,25 @@ void     _triangulos3D::draw_iluminacion_plana( ){
   glDisable(GL_LIGHTING);
 }
 
+//***************************************************************************
+// dibujar seleccion de color
+//***************************************************************************
+
+
+void _triangulos3D::draw_seleccion(int r, int g, int b){
+  int i;
+
+  glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+  glColor3ub(r,g,b);
+  glBegin(GL_TRIANGLES);
+  for (i=0;i<caras.size();i++){
+	  glVertex3fv((GLfloat *) &vertices[caras[i]._0]);
+	  glVertex3fv((GLfloat *) &vertices[caras[i]._1]);
+	  glVertex3fv((GLfloat *) &vertices[caras[i]._2]);
+	}
+  glEnd();
+}
+
 //*************************************************************************
 // calcular normales a caras
 //*************************************************************************
@@ -236,6 +255,7 @@ switch (modo){
         case SOLID_ILLUMINATED_GOURAUD:
             draw_iluminacion_suave();
             break;
+    case SELECT:draw_seleccion(r1,g1,b1);break;
 	}
 }
 
@@ -541,6 +561,7 @@ _cilindro::_cilindro(float radio, float altura, int m){
 //************************************************************************
 // objeto articulado: Homerbot
 //************************************************************************
+
 
 
 _chasis::_chasis(){
@@ -944,11 +965,31 @@ _robotHomer::_robotHomer(){
   movCodo=0;
   movCodo_max=25;
   movCodo_min=-10;
+
+//para la seleccion de color:
+int c=100;
+piezas=3;
+color_pick[0]=1.0;
+color_pick[1]=0.0;
+color_pick[2]=0.0; 
+
+for (int i=0;i<piezas;i++){
+  activo[i]=0;
+  color_selec[0][i]=color_selec[1][i]=color_selec[2][i]=c;
+  c=c+20;
+}
   
 };
 
 void _robotHomer::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor)
 {
+
+  float r_p,g_p,b_p;
+
+  r_p=color_pick[0];
+  g_p=color_pick[1];
+  b_p=color_pick[2];
+
   glPushMatrix();
   chasis.draw(modo, r1, g1, b1, r2, g2, b2, grosor);
   glPopMatrix();
@@ -975,6 +1016,28 @@ void _robotHomer::draw(_modo modo, float r1, float g1, float b1, float r2, float
 
 };
 
+//Pintar Chasis y Detalles juntos
+void _robotHomer::seleccion(){  //Funcion para seleccionar color
+  int c;
+  c=color_selec[0][0];
+  glPushMatrix();
+  chasis.draw(SELECT, c, c, c, c, c, c, 1);
+  detalles.draw(SELECT, c, c, c, c, c, c, 1);
 
+  c=color_selec[0][1];
+//glRotatef(giro_torreta,0,1,0);
+glPushMatrix();
+//glTranslatef(0.0,(chasis.altura+torreta.altura)/2.0,0.0);
+brazoM.draw(SELECT, c, c, c, c, c, c, 1);
+glPopMatrix();
 
+c=color_selec[0][2];
+glPushMatrix();
+//glTranslatef(torreta.anchura/2.0,(chasis.altura+torreta.altura)/2.0,0.0);
+//glRotatef(giro_tubo,0,0,1);
+brazoV.draw(SELECT, c, c, c, c, c, c, 1);
+glPopMatrix();
+glPopMatrix();
+
+}
 
