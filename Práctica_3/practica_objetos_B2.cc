@@ -228,7 +228,7 @@ void vista_orto(){	//Vista en alzado
 
 void draw(void)
 {
-
+glDrawBuffer(GL_FRONT);
 clean_window();
 if (cambio==0) {
 	glViewport(0,0,Ancho,Alto);
@@ -238,19 +238,17 @@ if (cambio==0) {
 	draw_objects();
 }
 else vista_orto();
-luces(alfa, beta);
-draw_axis();
-draw_objects();
+
 if(t_objeto==ARTICULADO){
-	//glDrawBuffer(GL_BACK); Se vería gris la parte de fuera
-	/* glDrawBuffer(GL_FRONT);
+	glDrawBuffer(GL_BACK); //Se vería gris la parte de fuera
+	//glDrawBuffer(GL_BACK);
 	clean_window();
 	change_observer();
-	homerBot.seleccion(); */
+	homerBot.seleccion();
 }
 
-//glFlush();
-glutSwapBuffers(); //NO se puede utilizar para la seleccion de color
+glFlush();
+//glutSwapBuffers(); //NO se puede utilizar para la seleccion de color
 
 }
 

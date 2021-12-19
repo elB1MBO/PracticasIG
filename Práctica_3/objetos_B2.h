@@ -144,12 +144,13 @@ class _cilindro: public _rotacion
 // objeto articulado : Homerbot
 //************************************************************************
 
+//He añadido parámetros a los draw de algunos objetos para poder dibujar de varios colores piezas de una misma clase y que luego se cambien en el modo SELECT
 
 class _chasis: public _triangulos3D{
 	public:
 		_chasis();
-	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
-	
+	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float grosor);
+
 
 protected:
 	_rotacion cilindro;
@@ -160,8 +161,8 @@ class _brazoMazo: public _triangulos3D{
 	public:
 		_brazoMazo();
 		float moviCodo;
-	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
-//Si descomento, y dejo en cada brazo los dos codos, da core dumped->Preguntar profe
+	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float r5, float g5, float b5, float r6, float g6, float b6, float grosor);
+
 private:
 	_rotacion codo;
 
@@ -175,8 +176,8 @@ class _brazoVacio: public _triangulos3D{
 	public:
 		_brazoVacio();
 		float moviCodo;
-	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
-	
+	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float grosor);
+
 private:
 	_rotacion codo;
 
@@ -188,7 +189,7 @@ private:
 class _detalles: public _triangulos3D{
 	public:
 		_detalles();
-	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor);
+	void 	draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float grosor);
 
 protected:
 	_rotacion detalle;

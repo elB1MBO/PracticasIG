@@ -597,7 +597,7 @@ float shine = 10.0f;
  */
 };
 
-void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor)
+void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float grosor)
 {
   //Cuerpo
   glPushMatrix();
@@ -622,7 +622,7 @@ void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2,
   cilindro.ambiente_difusa = _vertex4f(0.4f,0.5f,0.5f,1.0f ); //coeficientes ambiente y difuso
   cilindro.especular = _vertex4f(0.04f,0.7f,0.7f,1.0f);       //coeficiente especular
   cilindro.brillo = 10.0;
-  cilindro.draw(modo, 0, 0, 1, 0.2, 0.2, 1, grosor);
+  cilindro.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //RuedaDelantera
   glPushMatrix();
@@ -633,7 +633,7 @@ void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2,
   cilindro.ambiente_difusa = _vertex4f(0.5508, 0.2118, 0.066, 1.0); //coeficientes ambiente y difuso
   cilindro.especular = _vertex4f(0.580594, 0.223257, 0.0695701, 1.0);       //coeficiente especular
   cilindro.brillo = 51.2; 
-  cilindro.draw(modo, 0, 0, 0, 0.2, 0.2, 0.2, grosor);
+  cilindro.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //Rueda1
   glPushMatrix();
@@ -644,7 +644,7 @@ void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2,
   cilindro.ambiente_difusa = _vertex4f(0.5508, 0.2118, 0.066, 1.0); //coeficientes ambiente y difuso
   cilindro.especular = _vertex4f(0.580594, 0.223257, 0.0695701, 1.0);       //coeficiente especular
   cilindro.brillo = 51.2; 
-  cilindro.draw(modo, 0, 0, 0, 0.2, 0.2, 0.2, grosor);
+  cilindro.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //Rueda2
   glPushMatrix();
@@ -655,7 +655,7 @@ void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2,
   cilindro.ambiente_difusa = _vertex4f(0.5508, 0.2118, 0.066, 1.0); //coeficientes ambiente y difuso
   cilindro.especular = _vertex4f(0.580594, 0.223257, 0.0695701, 1.0);       //coeficiente especular
   cilindro.brillo = 51.2; 
-  cilindro.draw(modo, 0, 0, 0, 0.2, 0.2, 0.2, grosor);
+  cilindro.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //antena1
   glPushMatrix();
@@ -665,7 +665,7 @@ void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2,
   cilindro.ambiente_difusa = _vertex4f(0.5508, 0.2118, 0.066, 1.0); //coeficientes ambiente y difuso
   cilindro.especular = _vertex4f(0.580594, 0.223257, 0.0695701, 1.0);       //coeficiente especular
   cilindro.brillo = 51.2; 
-  cilindro.draw(modo, 0.7353, 0.7078, 0.7039, 0.7353, 0.7078, 0.7039, grosor);
+  cilindro.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //antena2
   glPushMatrix();
@@ -675,7 +675,7 @@ void _chasis::draw(_modo modo, float r1, float g1, float b1, float r2, float g2,
   cilindro.ambiente_difusa = _vertex4f(0.5508, 0.2118, 0.066, 1.0); //coeficientes ambiente y difuso
   cilindro.especular = _vertex4f(0.580594, 0.223257, 0.0695701, 1.0);       //coeficiente especular
   cilindro.brillo = 51.2; 
-  cilindro.draw(modo, 0.7353, 0.7078, 0.7039, 0.7353, 0.7078, 0.7039, grosor);
+  cilindro.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
 };
 
@@ -725,7 +725,7 @@ float shine = 25.6f;
 
 };
 
-void _brazoMazo::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor)
+void _brazoMazo::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float r5, float g5, float b5, float r6, float g6, float b6, float grosor)
 {
   //Antebrazo
   glPushMatrix();
@@ -764,7 +764,7 @@ void _brazoMazo::draw(_modo modo, float r1, float g1, float b1, float r2, float 
     mazo.ambiente_difusa = _vertex4f(0.25f, 0.25f, 0.25f, 1.0f); //coeficientes ambiente y difuso
     mazo.especular = _vertex4f(0.774597f, 0.774597f, 0.774597f, 1.0f );       //coeficiente especular
     mazo.brillo = 76.8; 
-    mazo.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+    mazo.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
     glPopMatrix();
     //mazo
     glPushMatrix();
@@ -773,7 +773,7 @@ void _brazoMazo::draw(_modo modo, float r1, float g1, float b1, float r2, float 
     mazo.ambiente_difusa = _vertex4f( 0.714f, 0.4284f, 0.18144f, 1.0f); //coeficientes ambiente y difuso
     mazo.especular = _vertex4f(0.393548f, 0.271906f, 0.166721f, 1.0f);       //coeficiente especular
     mazo.brillo = 25.6;
-    mazo.draw(modo, 0.545, 0.2705, 0.0745, 0.595, 0.3105, 0.145, grosor);
+    mazo.draw(modo, r5, g5, b5, r6, g6, b6, grosor);
     glPopMatrix();
     //mango
     glPushMatrix();
@@ -784,7 +784,7 @@ void _brazoMazo::draw(_modo modo, float r1, float g1, float b1, float r2, float 
     mazo.ambiente_difusa = _vertex4f( 0.714f, 0.4284f, 0.18144f, 1.0f); //coeficientes ambiente y difuso
     mazo.especular = _vertex4f(0.393548f, 0.271906f, 0.166721f, 1.0f);       //coeficiente especular
     mazo.brillo = 25.6;
-    mazo.draw(modo, 0.545, 0.2705, 0.0745, 0.595, 0.3105, 0.145, grosor);
+    mazo.draw(modo, r5, g5, b5, r6, g6, b6, grosor);
     glPopMatrix();
   glPopMatrix();
 
@@ -824,7 +824,7 @@ _brazoVacio::_brazoVacio(){
 
 };
 
-void _brazoVacio::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor)
+void _brazoVacio::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float grosor)
 {
   //Antebrazo
   glPushMatrix();
@@ -853,7 +853,7 @@ void _brazoVacio::draw(_modo modo, float r1, float g1, float b1, float r2, float
   vacio.ambiente_difusa = _vertex4f(0.25f, 0.25f, 0.25f, 1.0f); //coeficientes ambiente y difuso
   vacio.especular = _vertex4f(0.774597f, 0.774597f, 0.774597f, 1.0f );       //coeficiente especular
   vacio.brillo = 76.8; 
-  vacio.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  vacio.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //Codo
   glPushMatrix();
@@ -893,8 +893,9 @@ float shine = 76.8f;
  */
 };
 
-void _detalles::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float grosor)
+void _detalles::draw(_modo modo, float r1, float g1, float b1, float r2, float g2, float b2, float r3, float g3, float b3, float r4, float g4, float b4, float grosor)
 {
+
   //hombroIzqd
   glPushMatrix();
   glTranslatef(1.04,0.96,0);
@@ -905,41 +906,43 @@ void _detalles::draw(_modo modo, float r1, float g1, float b1, float r2, float g
   glTranslatef(-0.04,0.96,0);
   detalle.draw(modo, r1, g1, b1, r2, g2, b2, grosor);
   glPopMatrix();
+  //Cambio los valores de los colores para las distintas piezas:
+  
   //Casco
   glPushMatrix();
   glTranslatef(0.52,1.15,0);
   glScalef(1.3,1,1);
-  detalle.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  detalle.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //tapacubos1
   glPushMatrix();
   glTranslatef(0.52,0.15,0.18);
   glScalef(1,1,1.3);
-  detalle.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  detalle.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //tapacubos2
   glPushMatrix();
   glTranslatef(0,0.15,0);
   glScalef(1,1,1.3);
-  detalle.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  detalle.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //tapacubos3
   glPushMatrix();
   glTranslatef(1,0.15,0);
   glScalef(1,1,1.3);
-  detalle.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  detalle.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //antena1
   glPushMatrix();
   glTranslatef(0.15,1.5,0);
   glScalef(0.2,0.2,0.2);
-  detalle.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  detalle.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
   //antena2
   glPushMatrix();
   glTranslatef(0.9,1.5,0);
   glScalef(0.2,0.2,0.2);
-  detalle.draw(modo, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
+  detalle.draw(modo, r3, g3, b3, r4, g4, b4, grosor);
   glPopMatrix();
 };
 
@@ -969,8 +972,8 @@ _robotHomer::_robotHomer(){
 //para la seleccion de color:
 int c=100;
 piezas=3;
-color_pick[0]=1.0;
-color_pick[1]=0.0;
+color_pick[0]=0.0;
+color_pick[1]=1.0;
 color_pick[2]=0.0; 
 
 for (int i=0;i<piezas;i++){
@@ -991,7 +994,10 @@ void _robotHomer::draw(_modo modo, float r1, float g1, float b1, float r2, float
   b_p=color_pick[2];
 
   glPushMatrix();
-  chasis.draw(modo, r1, g1, b1, r2, g2, b2, grosor);
+  if(activo[0]==1)
+    chasis.draw(modo, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, grosor);
+  else
+    chasis.draw(modo, r1, g1, b1, r2, g2, b2, 0, 0, 0, 0.2, 0.2, 0.2, grosor);
   glPopMatrix();
 
   brazoM.moviCodo=movCodo;
@@ -999,7 +1005,10 @@ void _robotHomer::draw(_modo modo, float r1, float g1, float b1, float r2, float
   glTranslatef(-0.3,0.9,0);
   glRotatef(-giroHombroM,1,0,0);
   glRotatef(-abrirHombroM,0,0,1);
-  brazoM.draw(modo, r1, g1, b1, r2, g2, b2, grosor);
+  if(activo[1]==1)
+    brazoM.draw(modo, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, grosor);
+  else
+    brazoM.draw(modo, r1, g1, b1, r2, g2, b2, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, 0.545, 0.2705, 0.0745, 0.595, 0.3105, 0.145, grosor);
   glPopMatrix();
 
   brazoV.moviCodo=movCodo;
@@ -1007,37 +1016,46 @@ void _robotHomer::draw(_modo modo, float r1, float g1, float b1, float r2, float
   glTranslatef(1.3,0.9,0);
   glRotatef(-giroHombroV,1,0,0);
   glRotatef(-abrirHombroV,0,0,1);
-  brazoV.draw(modo, r1, g1, b1, r2, g2, b2, grosor);
+  if(activo[2]==1)
+    brazoV.draw(modo, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, grosor);
+  else
+    brazoV.draw(modo, r1, g1, b1, r2, g2, b2, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339, grosor);
   glPopMatrix();
 
+  //Pintare los objetos de esta clase junto a los del chasis
   glPushMatrix();
-  detalles.draw(modo, r1, g1, b1, r2, g2, b2, grosor);
+  if(activo[0]==1)
+    detalles.draw(modo, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, r_p,g_p,b_p, grosor);
+  else
+    detalles.draw(modo, r1, g1, b1, r2, g2, b2, 0.7353, 0.7078, 0.7039, 0.7653, 0.7378, 0.7339,  grosor);
   glPopMatrix();
-
 };
 
-//Pintar Chasis y Detalles juntos
 void _robotHomer::seleccion(){  //Funcion para seleccionar color
   int c;
   c=color_selec[0][0];
   glPushMatrix();
-  chasis.draw(SELECT, c, c, c, c, c, c, 1);
-  detalles.draw(SELECT, c, c, c, c, c, c, 1);
+  chasis.draw(SELECT, c, c, c, c, c, c, c, c, c, c, c, c, 1);
+  detalles.draw(SELECT, c, c, c, c, c, c, c, c, c, c, c, c, 1);
+  glPopMatrix();
 
   c=color_selec[0][1];
-//glRotatef(giro_torreta,0,1,0);
-glPushMatrix();
-//glTranslatef(0.0,(chasis.altura+torreta.altura)/2.0,0.0);
-brazoM.draw(SELECT, c, c, c, c, c, c, 1);
-glPopMatrix();
+  brazoM.moviCodo=movCodo;
+  glPushMatrix();
+  glTranslatef(-0.3,0.9,0);
+  glRotatef(-giroHombroM,1,0,0);
+  glRotatef(-abrirHombroM,0,0,1);
+  brazoM.draw(SELECT, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, c, 1);
+  glPopMatrix();
 
-c=color_selec[0][2];
-glPushMatrix();
-//glTranslatef(torreta.anchura/2.0,(chasis.altura+torreta.altura)/2.0,0.0);
-//glRotatef(giro_tubo,0,0,1);
-brazoV.draw(SELECT, c, c, c, c, c, c, 1);
-glPopMatrix();
-glPopMatrix();
-
+  c=color_selec[0][2];
+  brazoV.moviCodo=movCodo;
+  glPushMatrix();
+  glTranslatef(1.3, 0.9, 0);
+  glRotatef(-giroHombroV, 1, 0, 0);
+  glRotatef(-abrirHombroV, 0, 0, 1);
+  brazoV.draw(SELECT, c, c, c, c, c, c, c, c, c, c, c, c, 1);
+  glPopMatrix();
+  glPopMatrix();
 }
 
