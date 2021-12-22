@@ -316,6 +316,7 @@ switch (toupper(Tecla1)){
 		case 'V':velocidad*=2;break;
 		case 'B':velocidad/=2;break;
 		case 'N':mov=0;break;
+		case 'M':mov=1;break;
 	}
 glutPostRedisplay();
 }
@@ -414,12 +415,12 @@ void movimiento()
 {
 
 if (flag==0) {
-	homerBot.giroHombroM+=mov;
-	homerBot.giroHombroV+=mov;	
+	homerBot.giroHombroM+=mov*velocidad;
+	homerBot.giroHombroV+=mov*velocidad;	
 }
 else {
-	homerBot.giroHombroM-=mov;
-	homerBot.giroHombroV-=mov;
+	homerBot.giroHombroM-=mov*velocidad;
+	homerBot.giroHombroV-=mov*velocidad;
 }
 
 if (homerBot.giroHombroM>homerBot.giroHombroM_max) 
@@ -616,7 +617,7 @@ glutSpecialFunc(special_key);
 glutMouseFunc(clickRaton);
 glutMotionFunc(RatonMovido);
 
-//glutIdleFunc(movimiento);
+glutIdleFunc(movimiento);
 
 // funcion de inicialización
 initialize();
